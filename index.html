@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101116" />
+    <meta name="description" content="Discover films worth remembering with CineVault." />
+    <title>CineVault | Find your next favorite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#discover" aria-label="CineVault home" data-view="discover">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>cine<span class="brand-light">vault</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link is-active" type="button" data-view="discover">Discover</button>
+        <button class="nav-link" type="button" data-view="watchlist">Watchlist <span class="nav-count" id="watchlist-count">0</span></button>
+        <button class="nav-link" type="button" data-view="favorites">Favorites</button>
+      </nav>
+
+      <div class="header-tools">
+        <label class="search-box" for="movie-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+          <input id="movie-search" type="search" placeholder="Find a film" autocomplete="off" />
+          <kbd>/</kbd>
+        </label>
+        <button class="avatar-button" type="button" aria-label="Your CineVault profile">C</button>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="welcome-row" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow" id="welcome-eyebrow">YOUR NEXT GREAT WATCH STARTS HERE</p>
+          <h1 id="page-title">Find your next <span>favorite.</span></h1>
+        </div>
+        <p class="welcome-note">A little less scrolling.<br />A lot more <em>“that was so good.”</em></p>
+      </section>
+
+      <section class="featured" aria-label="Featured movie">
+        <div class="featured-backdrop" aria-hidden="true"></div>
+        <div class="featured-copy">
+          <p class="featured-label"><span class="live-dot"></span> TONIGHT'S FEATURE</p>
+          <h2>Dune: Part Two</h2>
+          <p class="featured-meta"><span>2024</span><i></i><span>Sci-Fi</span><i></i><span>2h 46m</span><i></i><span class="featured-rating">★ 8.5</span></p>
+          <p class="featured-description">The fate of a world rests in the hands of one who must choose between love and the destiny of the universe.</p>
+          <div class="featured-actions">
+            <button class="button button-primary" type="button" data-open-featured>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7V5Z"></path></svg>
+              Explore film
+            </button>
+            <button class="button button-quiet" type="button" data-action="watchlist" data-movie-id="693134" aria-label="Add Dune: Part Two to watchlist">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+              <span>Add to watchlist</span>
+            </button>
+          </div>
+        </div>
+        <div class="featured-poster-wrap" aria-hidden="true">
+          <img class="featured-poster" src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="" />
+          <span class="poster-glint"></span>
+        </div>
+        <span class="featured-index" aria-hidden="true">01 <span>/ 04</span></span>
+      </section>
+
+      <section class="discover-section" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow" id="collection-kicker">CURATED FOR YOUR EVENING</p>
+            <h2 id="collection-title">Popular this week <span class="heading-spark">✳</span></h2>
+          </div>
+          <label class="sort-control" for="sort-select">
+            <span>Sort by</span>
+            <select id="sort-select" aria-label="Sort movies">
+              <option value="popular">Most popular</option>
+              <option value="rating">Top rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Filter by genre" id="genre-filters">
+          <button class="filter-chip is-selected" type="button" data-genre="all" aria-pressed="true">All films</button>
+          <button class="filter-chip" type="button" data-genre="Sci-Fi" aria-pressed="false">Sci-Fi</button>
+          <button class="filter-chip" type="button" data-genre="Drama" aria-pressed="false">Drama</button>
+          <button class="filter-chip" type="button" data-genre="Animation" aria-pressed="false">Animation</button>
+          <button class="filter-chip" type="button" data-genre="Action" aria-pressed="false">Action</button>
+          <button class="filter-chip" type="button" data-genre="Romance" aria-pressed="false">Romance</button>
+          <button class="filter-chip" type="button" data-genre="Thriller" aria-pressed="false">Thriller</button>
+        </div>
+
+        <div class="movie-grid" id="movie-grid" aria-live="polite"></div>
+        <p class="empty-state" id="empty-state" hidden>No films found. Try another title or genre.</p>
+      </section>
+
+      <footer class="site-footer">
+        <a class="brand footer-brand" href="#discover" data-view="discover"><span class="brand-mark" aria-hidden="true"><span></span></span><span>cine<span class="brand-light">vault</span></span></a>
+        <p>Your personal home for great films.</p>
+        <span class="footer-credit">MOVIE NIGHT, SORTED <span>✳</span></span>
+      </footer>
+    </main>
+
+    <dialog class="movie-dialog" id="movie-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close movie details" data-close-dialog>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+      </button>
+      <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
