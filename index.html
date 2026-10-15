@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#101116" />
     <meta name="description" content="Discover films worth remembering with CineVault." />
+    <meta name="author" content="CineVault WDD 330 project" />
     <title>CineVault | Find your next favorite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +29,7 @@
       <div class="header-tools">
         <label class="search-box" for="movie-search">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
-          <input id="movie-search" type="search" placeholder="Find a film" autocomplete="off" />
+          <input id="movie-search" type="search" placeholder="Find a film or series" autocomplete="off" />
           <kbd>/</kbd>
         </label>
         <button class="avatar-button" type="button" aria-label="Your CineVault profile">C</button>
@@ -95,6 +96,7 @@
           <button class="filter-chip" type="button" data-genre="Thriller" aria-pressed="false">Thriller</button>
         </div>
 
+        <p class="api-status" id="api-status" role="status" aria-live="polite"></p>
         <div class="movie-grid" id="movie-grid" aria-live="polite"></div>
         <p class="empty-state" id="empty-state" hidden>No films found. Try another title or genre.</p>
       </section>
